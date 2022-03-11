@@ -6,6 +6,7 @@ class GestionFichier{
     }
     read(){
         this.contenu = fs.readFileSync(this.file,{encoding:'utf8',flag:'r'})
+        return this.contenu
         //console.log(this.contenu)
         this.affichage()
     }
@@ -24,9 +25,5 @@ class GestionFichier{
     }
 
 }
-let myfile = new GestionFichier('text.txt')
-myfile.read()
-myfile.write('New ... \n ')
-//myfile.delete()
 
-//class GestionFichierJson extends GestionFichier
+module.exports = GestionFichier
